@@ -1,0 +1,19 @@
+const start = (activeSlide = 0) => {
+    const slides = document.querySelectorAll('.slide')
+    slides[activeSlide].classList.add('active')
+
+    for (const slide of slides) {
+        slide.addEventListener('click', () => {
+            removeActiveClasses()
+            slide.classList.add('active')
+        })
+    }
+
+    const removeActiveClasses = () => {
+        slides.forEach(slide => {
+            slide.classList.remove('active')
+        })
+    }
+}
+
+start(1)
